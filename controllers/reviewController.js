@@ -138,7 +138,7 @@ const deleteReview = async (req, res, next) => {
     }
 
     // Delete review
-    await review.remove();
+    await review.deleteOne();
 
     res.status(200).json({
       success: true,
@@ -154,6 +154,7 @@ const deleteReview = async (req, res, next) => {
     next(error);
   }
 };
+
 
 module.exports = {
   addReview,
